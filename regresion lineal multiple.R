@@ -66,3 +66,6 @@ model_residuals_2=modelo_nuevo_2$residuals
 # Plot the residuals
 qqnorm(model_residuals_2)
 qqline(model_residuals_2)
+
+par(mfrow = c(2, 2))
+plot(modelo_nuevo_2)
