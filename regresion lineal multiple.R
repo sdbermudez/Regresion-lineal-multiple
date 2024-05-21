@@ -53,3 +53,16 @@ model_residuals = modelo_nuevo$residuals
 qqnorm(model_residuals)
 # Plot the Q-Q line
 qqline(model_residuals)
+
+library(lmtest)
+install.packages("lmtest")
+bptest(modelo_nuevo)
+modelo_nuevo_2 <- lm(formula = yp ~ log(x1) + x2 -1, data = datos)
+summary(modelo_nuevo_2)
+bptest(modelo_nuevo_2)
+
+
+model_residuals_2=modelo_nuevo_2$residuals
+# Plot the residuals
+qqnorm(model_residuals_2)
+qqline(model_residuals_2)
